@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard - Atividades</h1>
+    <h2><%=login.nome%></h2>
+    <h3>Cadastrar Atividades</h3>
+    <form action="" method="POST">
+        <input type="hidden" name="id" value="<%=login._id%>">
+        <input type="date" name="data" id="data"><br>
+        <select name="tipo" id="tipo">
+            <option value="AC">AC</option>
+            <option value="AT">AT</option>
+        </select><br>
+        <input type="text" name="entrega" id="entrega"
+        placeholder="Ex: Tarefas no Teams, Chat, Email, Forms, etc"><br>
+        <input type="text" name="diciplina" id="diciplina"
+        placeholder="Ex: INW, BD2, LP2, HeG, BIO, etc"><br>
+        <textarea name="instrucoes" id="instrucoes" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Salvar"><br>
+    </form>
+    
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Entrega</th>
+            <th>Disciplina</th>
+            <th>Instruções</th>
+        </tr>
+        <% for (var n = 0; n < lista.length; n++) { %>
+        <tr>
+            <td><%=lista[n].data%></td>
+            <td><%=lista[n].tipo%></td>
+            <td><%=lista[n].entrega%></td>
+            <td><%=lista[n].disciplina%></td>
+            <td><%=lista[n].instrucoes%></td>
+        </tr>
+        <% } %>
+    </table>
+    
+</body>
+</html>
